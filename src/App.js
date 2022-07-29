@@ -1,23 +1,22 @@
-import logo from './logo.svg';
 import './App.css';
+import { useSelector } from 'react-redux';
+import Income from './components/Income/Income';
+import Costs from './components/Costs/Costs';
+import Counter from './components/Counter/Counter';
+import Form from './components/Form/Form';
 
 function App() {
+  const counterRedux = useSelector(state => state.counter);
+  const costs = useSelector(state => state.costs);
+  const income = useSelector(state => state.income);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      <h1>Wallet</h1>
+      <Form />
+      <Counter counterRedux={counterRedux} />
+      <Income data={income} />
+      <Costs data={costs} />
     </div>
   );
 }

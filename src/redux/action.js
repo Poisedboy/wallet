@@ -1,4 +1,4 @@
-import { ADD_INCOME, ADD_COSTS } from './types';
+import { ADD_INCOME, ADD_EXPENSE } from './types';
 
 export const addIncome = (income) => {
     return {
@@ -7,9 +7,9 @@ export const addIncome = (income) => {
     };
 };
 
-export const addCosts = (costs) => {
+export const addExpense = (expense) => {
     return {
-        type: ADD_COSTS,
-        payload: costs
+        type: ADD_EXPENSE,
+        payload: expense
     };
 };

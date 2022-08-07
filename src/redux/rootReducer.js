@@ -1,8 +1,8 @@
-import { ADD_COSTS, ADD_INCOME } from './types';
+import { ADD_EXPENSE, ADD_INCOME } from './types';
 
 let initialState = {
     counter: 1,
-    costs: [],
+    expense: [],
     income: []
 };
 
@@ -11,12 +11,12 @@ const rootReducer = (state = initialState, action) => {
         case ADD_INCOME:
             return {
                 ...state,
-                income: state.income.push(action.payload)
+                income: [...state.income, action.payload]
             }
-        case ADD_COSTS:
+        case ADD_EXPENSE:
             return {
                 ...state,
-                costs: state.costs.push(action.payload)
+                expense: [...state.expense, action.payload]
             }
         default:
             return state;

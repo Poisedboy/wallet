@@ -7,8 +7,8 @@ const Modal = ({ title, isOpen, onClose, children }) => {
     const handleOverlayClick = (e) => {
         if (e.target === overlayRef.current) {
             onClose();
-        }
-    } 
+        };
+    };
 
     return (
         isOpen ? <div className="modal">

@@ -1,12 +1,15 @@
 import { useState } from "react";
 import './form.css';
 import { useDispatch } from "react-redux";
-import { addIncome, addExpense } from '../../redux/action';
+import { addIncome, addExpense } from '../../redux/listsSlice';
+import { incrementCounter, decrementCounter } from '../../redux/counterSlice';
+import { useNavigate } from "react-router-dom";
 
 const Form = ({onClose}) => {
     const [title, setTitle] = useState('');
-    const [sum, setSum] = useState('');
+    const [sum, setSum] = useState(0);
     const [accounting, setAccounting] = useState('');
+    const navigate = useNavigate();
 
     const dispatch = useDispatch();
 
@@ -25,12 +28,14 @@ const Form = ({onClose}) => {
     const handleSubmit = (event) => {
         event.preventDefault();
         if (accounting === 'income') {
+            dispatch(incrementCounter(sum));
             dispatch(addIncome({
                 title: title,
                 sum: sum,
                 accounting: accounting
             }));
         } else {
+            dispatch(decrementCounter(sum));
             dispatch(addExpense({
                 title: title,
                 sum: sum,
@@ -41,6 +46,7 @@ const Form = ({onClose}) => {
         setSum('');
         setAccounting('');
         onClose();
+        navigate('/');
     };
     return (
         <form>

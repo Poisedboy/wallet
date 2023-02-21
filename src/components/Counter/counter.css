@@ -1,0 +1,16 @@
+.counter__value {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+.counter__value h3 {
+    margin-left: 10px;
+}
+.counter__lists > *{
+    width: 250px;
+    margin-bottom: 4px;
+    padding: 10px;
+    border: 2px solid #000;
+    border-radius: 10px;
+}

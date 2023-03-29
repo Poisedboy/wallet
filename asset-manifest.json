@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/wallet/static/css/main.d09a3c3c.css",
-    "main.js": "/wallet/static/js/main.cb097843.js",
+    "main.js": "/wallet/static/js/main.1937e05e.js",
     "index.html": "/wallet/index.html",
     "main.d09a3c3c.css.map": "/wallet/static/css/main.d09a3c3c.css.map",
-    "main.cb097843.js.map": "/wallet/static/js/main.cb097843.js.map"
+    "main.1937e05e.js.map": "/wallet/static/js/main.1937e05e.js.map"
   },
   "entrypoints": [
     "static/css/main.d09a3c3c.css",
-    "static/js/main.cb097843.js"
+    "static/js/main.1937e05e.js"
   ]
 }

@@ -1,12 +1,15 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import './modal.css';
 
 const Modal = ({ title, isOpen, onClose, children }) => {
     const overlayRef = React.useRef(null);
+    const navigate = useNavigate();
 
     const handleOverlayClick = (e) => {
         if (e.target === overlayRef.current) {
             onClose();
+            navigate('/')
         };
     };
 

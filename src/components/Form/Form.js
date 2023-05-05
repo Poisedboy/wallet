@@ -34,6 +34,8 @@ const Form = ({onClose}) => {
                 sum: sum,
                 accounting: accounting
             }));
+            onClose();
+            navigate('/');
         } else {
             dispatch(decrementCounter(sum));
             dispatch(addExpense({
@@ -41,12 +43,12 @@ const Form = ({onClose}) => {
                 sum: sum,
                 accounting: accounting
             }));
+            onClose();
+            navigate('/');
         };
         setTitle('');
         setSum('');
         setAccounting('');
-        onClose();
-        navigate('/');
     };
     return (
         <form>
@@ -85,7 +87,7 @@ const Form = ({onClose}) => {
                     onClick={handleSubmit}
                     className='content__submit'
                 />
-                <button onClick={() => onClose}>
+                <button onClick={onClose}>
                     Скасувати
                 </button>
             </div>
